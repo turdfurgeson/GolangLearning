@@ -2,8 +2,7 @@ package main
 
 import "fmt"
 
-
-func nums () {
+func nums() {
 
 	low := 0
 
@@ -18,26 +17,26 @@ func nums () {
 	fmt.Scan(&high)
 
 	num := []int{}
+	sum := 0
 
 	for i := low; i <= high; i++ {
 
 		if int(i)%5 == 0 || int(i)%3 == 0 {
 
 			num = append(num, i)
+			sum += i
 		}
 	}
 
 	fmt.Println("The numbers divisible by 3 or 5 are", num)
+	fmt.Println("The sum off all the divisbile numbers is: ", sum)
 
 }
 
-func main () {
+func main() {
 
 	nums()
 }
-
-
-
 
 /* If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
