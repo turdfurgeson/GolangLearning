@@ -15,30 +15,21 @@ type airTraffic interface {
 }
 
 func (p Pilot) speak() string {
-	return "Request landing clearance"
+	return p.talk
 }
 
 func (c Controller) speak() string {
-	return "Runway 28R cleared to land"
+	return c.talk
 }
 
 func talk(z airTraffic) {
-	fmt.Println(z)
+	//fmt.Println(z)
 	fmt.Println(z.speak())
 }
 
 func main() {
-	a := Pilot{}
-	b := Controller{}
+	a := Pilot{"Request landing clearance"}
+	b := Controller{"Runway 28R cleared to land"}
 	talk(a)
 	talk(b)
 }
-
-//func main() {
-//	x := []airTraffic{Pilot{}, Controller{}}
-//	for _, airTraffic := range x {
-//		fmt.Println(airTraffic.speak())
-//
-//	}
-//
-//}
