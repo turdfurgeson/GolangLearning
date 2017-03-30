@@ -11,6 +11,7 @@ func main() {
 
 	go func() {
 		for i := 0; i < 10; i++ {
+			//puts value of i onto the channel
 			c <- i
 		}
 	}()
@@ -21,6 +22,7 @@ func main() {
 
 		}
 	}()
+	//this doesn't let main() exit.
 	time.Sleep(time.Second)
 }
 
