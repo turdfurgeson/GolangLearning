@@ -22,6 +22,8 @@ func main() {
 		done <- true
 	}()
 
+	//without putting the following into a go routine of their own, the
+	// channels are blocked.
 	go func() {
 		//take value off the channel and free it up.
 		<-done
